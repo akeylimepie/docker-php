@@ -2,17 +2,17 @@
 
 ![](https://img.shields.io/badge/-8.2.5-informational) ![](https://img.shields.io/badge/-8.1.18-informational) ![](https://img.shields.io/badge/-8.0.28-informational) 
 
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php-alpine/8.2-zts?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php-alpine)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php-alpine/8.2-graphic-zts?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php-alpine)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/akeylimepie/php-alpine)](https://hub.docker.com/r/akeylimepie/php-alpine)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-zts?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-graphic-zts?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/akeylimepie/php)](https://hub.docker.com/r/akeylimepie/php)
 [![build](https://github.com/hyqo/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/hyqo/docker-php/actions/workflows/build.yml)
 
 arch: linux/amd64, linux/arm64
 
 ```
-docker pull akeylimepie/php-alpine:8.2-fpm
-docker pull akeylimepie/php-alpine:8.2-cli
-docker pull akeylimepie/php-alpine:8.2-zts
+docker pull akeylimepie/php:8.2-fpm
+docker pull akeylimepie/php:8.2-cli
+docker pull akeylimepie/php:8.2-zts
 ```
 
 |                                 | prod    | dev     |
