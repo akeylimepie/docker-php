@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/php-alpine
+  IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/php
   PHP80_VERSION: 8.0.28
   PHP81_VERSION: 8.1.18
   PHP82_VERSION: 8.2.5
