@@ -5,7 +5,7 @@
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_TAG%%?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/%%IMAGE%%)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_GRAPHIC_TAG%%?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/%%IMAGE%%)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/%%IMAGE%%)](https://hub.docker.com/r/%%IMAGE%%)
-[![build](https://github.com/hyqo/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/hyqo/docker-php/actions/workflows/build.yml)
+[![build](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml)
 
 arch: linux/amd64, linux/arm64
 
