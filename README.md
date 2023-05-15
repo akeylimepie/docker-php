@@ -5,7 +5,7 @@
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-zts?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-graphic-zts?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/akeylimepie/php)](https://hub.docker.com/r/akeylimepie/php)
-[![build](https://github.com/hyqo/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/hyqo/docker-php/actions/workflows/build.yml)
+[![build](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml)
 
 arch: linux/amd64, linux/arm64
 
@@ -19,7 +19,7 @@ docker pull akeylimepie/php:8.2-zts
 |---------------------------------|---------|---------|
 | Composer `2.5.5` | &check; | &check; |
 | Xdebug `3.2.1`     |         | &check; |
-| PHPStan `1.10.14`   |         | &check; |
+| PHPStan `1.10.15`   |         | &check; |
 | Redis `5.3.7`       | &check; | &check; |
 | PDO, PDO PostgreSQL             | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
