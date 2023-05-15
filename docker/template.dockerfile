@@ -1,7 +1,7 @@
 ARG PHP_VERSION
 ARG PHP_ENV
 ARG PHP_MODE
-FROM php:${PHP_VERSION}-${PHP_MODE}-alpine3.16 as build
+FROM php:${PHP_VERSION}-${PHP_MODE}-alpine as build
 
 RUN apk update && \
     apk upgrade --update-cache --available && \
