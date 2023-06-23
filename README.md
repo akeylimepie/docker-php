@@ -17,9 +17,9 @@ docker pull akeylimepie/php:8.2-zts
 
 |                                 | prod    | dev     |
 |---------------------------------|---------|---------|
-| Composer `2.5.7` | &check; | &check; |
+| Composer `2.5.8` | &check; | &check; |
 | Xdebug `3.2.1`     |         | &check; |
-| PHPStan `1.10.18`   |         | &check; |
+| PHPStan `1.10.21`   |         | &check; |
 | Redis `5.3.7`       | &check; | &check; |
 | PDO, PDO PostgreSQL             | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
