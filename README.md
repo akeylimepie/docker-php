@@ -17,10 +17,10 @@ docker pull akeylimepie/php:8.2-zts
 
 |                                 | prod    | dev     |
 |---------------------------------|---------|---------|
-| Composer `2.6.2` | &check; | &check; |
+| Composer `2.6.3` | &check; | &check; |
 | Xdebug `3.2.2`     |         | &check; |
-| PHPStan `1.10.34`   |         | &check; |
-| Redis `5.3.7`       | &check; | &check; |
+| PHPStan `1.10.35`   |         | &check; |
+| Redis `6.0.0`       | &check; | &check; |
 | PDO, PDO PostgreSQL             | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
