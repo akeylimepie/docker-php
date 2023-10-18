@@ -27,7 +27,7 @@ RUN install-php-extensions \
 RUN mkdir /etc/periodic/1min \
     && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 
-COPY environments/opcache.ini "$PHP_INI_DIR/conf.d/zz-opcache.ini"
+COPY environments/yy.ini "$PHP_INI_DIR/conf.d/"
 
 WORKDIR /srv/app
 
@@ -42,7 +42,7 @@ RUN cd /opt && composer require phpstan/phpstan:$PHPSTAN_VERSION
 
 ENV PATH "$PATH:/opt/vendor/bin"
 
-COPY environments/dev/xdebug.ini "$PHP_INI_DIR/conf.d/zz-xdebug.ini"
+COPY environments/yy-dev.ini "$PHP_INI_DIR/conf.d/"
 
 EXPOSE 9003
 
@@ -50,8 +50,7 @@ FROM build as prod-env
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY environments/opcache.ini "$PHP_INI_DIR/conf.d/zz-opcache.ini"
-COPY environments/prod/opcache.ini "$PHP_INI_DIR/conf.d/zz-opcache-prod.ini"
+COPY environments/yy-prod.ini "$PHP_INI_DIR/conf.d/"
 
 # mode
 FROM ${PHP_ENV}-env as fpm-mode
