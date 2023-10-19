@@ -27,7 +27,7 @@ RUN install-php-extensions \
 RUN mkdir /etc/periodic/1min \
     && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 
-COPY environments/yy.ini "$PHP_INI_DIR/conf.d/"
+COPY environments/yy-@.ini "$PHP_INI_DIR/conf.d/"
 
 WORKDIR /srv/app
 
