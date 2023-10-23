@@ -61,7 +61,7 @@ COPY config/yy-fpm-healthcheck.conf /usr/local/etc/php-fpm.d/
 RUN apk add --no-cache fcgi && \
     chmod +x /usr/local/bin/healthcheck
 
-HEALTHCHECK --interval=5s --timeout=5s --retries=5 CMD ["healthcheck"]
+HEALTHCHECK --interval=10s --timeout=3s --retries=3 --start-period=10s --start-interval=3s CMD ["healthcheck"]
 
 EXPOSE 9000
 CMD bash -c "crond && php-fpm"
