@@ -55,9 +55,9 @@ COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
 # mode
 FROM ${PHP_ENV}-env as fpm-mode
 
-RUN apk add --no-cache fcgi
-
 COPY fpm-healthcheck.sh /usr/local/bin/healthcheck
+RUN apk add --no-cache fcgi && \
+    chmod +x /usr/local/bin/healthcheck
 
 HEALTHCHECK --interval=5s --timeout=5s --retries=5 CMD ["healthcheck"]
 
