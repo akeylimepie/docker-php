@@ -56,7 +56,7 @@ COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
 FROM ${PHP_ENV}-env as fpm-mode
 
 COPY fpm-healthcheck.sh /usr/local/bin/healthcheck
-COPY config/yy-fpm-healthcheck.conf /usr/local/etc/php-fpm.d/
+COPY config/yy-fpm.conf /usr/local/etc/php-fpm.d/
 
 RUN apk add --no-cache fcgi && \
     chmod +x /usr/local/bin/healthcheck
