@@ -1,6 +1,6 @@
 # PHP + Xdebug
 
-![](https://img.shields.io/badge/-8.2.11-informational) ![](https://img.shields.io/badge/-8.1.24-informational) ![](https://img.shields.io/badge/-8.0.30-informational) 
+![](https://img.shields.io/badge/-8.2.12-informational) ![](https://img.shields.io/badge/-8.1.25-informational) ![](https://img.shields.io/badge/-8.0.30-informational) 
 
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-zts?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-graphic-zts?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/akeylimepie/php)
