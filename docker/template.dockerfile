@@ -67,7 +67,8 @@ EXPOSE 9000
 CMD bash -c "crond && php-fpm"
 
 FROM ${PHP_ENV}-env as cli-mode
-CMD ["php", "-a"]
+RUN apk add --no-cache supervisor
+CMD ["supervisord", "-n", "-u", "root", "-c", "/etc/supervisord.conf"]
 
 FROM ${PHP_ENV}-env as zts-mode
 CMD ["php", "-a"]
