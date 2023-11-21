@@ -35,7 +35,7 @@ WORKDIR /srv/app
 FROM build as dev-env
 
 ARG XDEBUG_VERSION
-RUN install-php-extensions xdebug-${XDEBUG_VERSION} blackfire
+RUN install-php-extensions xdebug-${XDEBUG_VERSION}
 
 ARG PHPSTAN_VERSION
 RUN cd /opt && composer require phpstan/phpstan:$PHPSTAN_VERSION
