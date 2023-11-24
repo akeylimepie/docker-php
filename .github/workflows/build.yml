@@ -111,6 +111,7 @@ jobs:
             "COMPOSER_VERSION=${{ env.COMPOSER_VERSION }}"
             "XDEBUG_VERSION=${{ env.XDEBUG_VERSION }}"
             "PHPSTAN_VERSION=${{ env.PHPSTAN_VERSION }}"
+          target: ${{ matrix.mode }}-mode
           tags: ${{ steps.set-tag.outputs.base }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new

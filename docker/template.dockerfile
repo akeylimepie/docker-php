@@ -24,6 +24,8 @@ RUN install-php-extensions \
         pcntl ffi \
         sockets-stable ev-stable event-stable
 
+RUN apk add --no-cache supervisor
+
 RUN mkdir /etc/periodic/1min \
     && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 
@@ -63,15 +65,6 @@ RUN apk add --no-cache fcgi && \
 
 HEALTHCHECK --interval=10s --timeout=3s --retries=3 --start-period=10s --start-interval=3s CMD ["healthcheck"]
 
-EXPOSE 9000
-CMD bash -c "crond && php-fpm"
-
 FROM ${PHP_ENV}-env as cli-mode
-CMD ["php", "-a"]
 
 FROM ${PHP_ENV}-env as zts-mode
-RUN apk add --no-cache supervisor
-CMD ["supervisord", "-n", "-u", "root", "-c", "/etc/supervisord.conf"]
-
-# final
-FROM ${PHP_MODE}-mode
