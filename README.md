@@ -15,13 +15,13 @@ docker pull akeylimepie/php:8.2-cli
 docker pull akeylimepie/php:8.2-zts
 ```
 
-|                                 | prod    | dev     |
+| fpm, cli, zts                   | prod    | dev     |
 |---------------------------------|---------|---------|
 | Composer `2.6.5` | &check; | &check; |
 | Xdebug `3.2.2`     |         | &check; |
 | PHPStan `1.10.43`   |         | &check; |
 | Redis `6.0.2`       | &check; | &check; |
-| PDO, PDO PostgreSQL             | &check; | &check; |
+| PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
 
