@@ -15,7 +15,6 @@ env:
   XDEBUG_VERSION: 3.2.2
   PHPSTAN_VERSION: 1.10.43
   REDIS_VERSION: 6.0.2
-  CAVIF_VERSION: 1.5.4
 
 jobs:
   build-matrix:
@@ -62,28 +61,17 @@ jobs:
           esac
 
           TAG="${MAJOR}.${MINOR}-${{ matrix.mode }}${ENV_MARK}"
-          TAG_GRAPHIC="${MAJOR}.${MINOR}-graphic-${{ matrix.mode }}${ENV_MARK}"
           
           mkdir tag
           touch "tag/${TAG}"
           
-          mkdir tag_graphic
-          touch "tag_graphic/${TAG_GRAPHIC}"
-                    
           echo "base=${{ env.IMAGE }}:${TAG}" >> $GITHUB_OUTPUT
-          echo "graphic=${{ env.IMAGE }}:${TAG_GRAPHIC}" >> $GITHUB_OUTPUT
 
       - name: Save tag
         uses: actions/upload-artifact@v3
         with:
           name: tags
           path: tag/*
-
-      - name: Save graphic tag
-        uses: actions/upload-artifact@v3
-        with:
-          name: graphic_tags
-          path: tag_graphic/*
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -93,6 +81,14 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ matrix.version }}-${{ matrix.mode }}-${{ matrix.env }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-${{ matrix.version }}-${{ matrix.mode }}-${{ matrix.env }}-
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -115,20 +111,14 @@ jobs:
             "COMPOSER_VERSION=${{ env.COMPOSER_VERSION }}"
             "XDEBUG_VERSION=${{ env.XDEBUG_VERSION }}"
             "PHPSTAN_VERSION=${{ env.PHPSTAN_VERSION }}"
-            "MEMCACHED_VERSION=${{ env.MEMCACHED_VERSION }}"
           tags: ${{ steps.set-tag.outputs.base }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
 
-      - name: Build graphic image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          file: ./docker/template-graphic.dockerfile
-          platforms: linux/amd64,linux/arm64
-          build-args: |
-            "IMAGE_TAG=${{ steps.set-tag.outputs.base }}"
-            "CAVIF_VERSION=${{ env.CAVIF_VERSION }}"
-          tags: ${{ steps.set-tag.outputs.graphic }}
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   readme:
     needs: [ build-image, build-matrix ]
@@ -143,12 +133,6 @@ jobs:
           name: tags
           path: tags
 
-      - name: Load graphic tags
-        uses: actions/download-artifact@v3
-        with:
-          name: graphic_tags
-          path: graphic_tags
-
       - name: Update README.md
         run: |
           VERSION_BADGES=""
@@ -161,19 +145,14 @@ jobs:
           TAGS=(
             $(find tags -type f -print0 | while read -rd $'\0' file; do echo ${file##*/}; done | sort -r)
           )
-          GRAPHIC_TAGS=(
-            $(find graphic_tags -type f -print0 | while read -rd $'\0' file; do echo ${file##*/}; done | sort -r)
-          )
 
           LATEST_VERSION=$(echo "$LATEST_VERSION" | sed -E 's/\.[0-9]+$//')
-          LATEST_TAG="${TAGS[0]/-dev/}"
-          LATEST_GRAPHIC_TAG="${GRAPHIC_TAGS[0]/-dev/}"
 
           function generate_tags_table () {
             TAGS=("$@")
             PROD_BUILDS=()
             DEV_BUILDS=()
-            
+          
             for TAG in "${TAGS[@]}"; do
               if [[ $TAG =~ \-dev ]]; then
                 DEV_BUILDS+=("$TAG")
@@ -181,12 +160,12 @@ jobs:
                 PROD_BUILDS+=("$TAG")
               fi
             done
-            
+          
             string="| prod | dev |"
             string+=$'\n'
             string+="| --- | --- |"
             string+=$'\n'
-            
+          
             for i in "${!PROD_BUILDS[@]}"; do
               string+="| ${PROD_BUILDS[$i]} | ${DEV_BUILDS[$i]} |"
               string+=$'\n'
@@ -198,23 +177,18 @@ jobs:
           IMAGE="${{ env.IMAGE }}"
           
           README=$(<README.template.md)
+          
           README="${README//%%IMAGE%%/$IMAGE}"
           README="${README//%%VERSION_BADGES%%/$VERSION_BADGES}"
           README="${README//%%LATEST_VERSION%%/$LATEST_VERSION}"
-          README="${README//%%LATEST_TAG%%/$LATEST_TAG}"
-          README="${README//%%LATEST_GRAPHIC_TAG%%/$LATEST_GRAPHIC_TAG}"
 
           README="${README//%%COMPOSER_VERSION%%/$COMPOSER_VERSION}"
           README="${README//%%XDEBUG_VERSION%%/$XDEBUG_VERSION}"
           README="${README//%%PHPSTAN_VERSION%%/$PHPSTAN_VERSION}"
-          README="${README//%%MEMCACHED_VERSION%%/$MEMCACHED_VERSION}"
           README="${README//%%REDIS_VERSION%%/$REDIS_VERSION}"
 
           generate_tags_table "${TAGS[@]}"          
           README="${README//%%TAGS_TABLE%%/$TAGS_TABLE}"
-
-          generate_tags_table "${GRAPHIC_TAGS[@]}"          
-          README="${README//%%GRAPHIC_TAGS_TABLE%%/$TAGS_TABLE}"
 
           echo "$README" > README.md
 

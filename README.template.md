@@ -2,8 +2,8 @@
 
 %%VERSION_BADGES%%
 
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_TAG%%?label=w%2Fo%20graphic%20libs)](https://hub.docker.com/r/%%IMAGE%%)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_GRAPHIC_TAG%%?label=w%2F%20graphic%20libs)](https://hub.docker.com/r/%%IMAGE%%)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_VERSION%%-fpm?label=prod)](https://hub.docker.com/r/%%IMAGE%%)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/%%IMAGE%%/%%LATEST_VERSION%%-fpm-dev?label=dev)](https://hub.docker.com/r/%%IMAGE%%)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/%%IMAGE%%)](https://hub.docker.com/r/%%IMAGE%%)
 [![build](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml)
 
@@ -25,17 +25,6 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
 
-Containers with graphic libs include:
-
-* ImageMagick
-* GD
-* cwebp, dwebp
-* cavif
-* jpegoptim
-* pngquant
-
 ## Supported tags
 
 %%TAGS_TABLE%%
-
-%%GRAPHIC_TAGS_TABLE%%
