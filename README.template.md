@@ -15,13 +15,13 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-cli
 docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 ```
 
-|                                 | prod    | dev     |
+| fpm, cli, zts                   | prod    | dev     |
 |---------------------------------|---------|---------|
 | Composer `%%COMPOSER_VERSION%%` | &check; | &check; |
 | Xdebug `%%XDEBUG_VERSION%%`     |         | &check; |
 | PHPStan `%%PHPSTAN_VERSION%%`   |         | &check; |
 | Redis `%%REDIS_VERSION%%`       | &check; | &check; |
-| PDO, PDO PostgreSQL             | &check; | &check; |
+| PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
 
