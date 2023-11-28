@@ -21,7 +21,6 @@ docker pull akeylimepie/php:8.3-zts
 | Xdebug `beta`     |         | &check; |
 | PHPStan `1.10.44`   |         | &check; |
 | Redis `6.0.2`       | &check; | &check; |
-| cron, supervisor                | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
