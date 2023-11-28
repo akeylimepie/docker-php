@@ -5,8 +5,12 @@ FROM php:${PHP_VERSION}-${PHP_MODE}-alpine as build
 
 RUN apk update && \
     apk upgrade --update-cache --available && \
-    apk add --no-cache bash shadow && \
-    usermod -u 1000 www-data && groupmod -g 1000 www-data
+    apk add --no-cache bash
+
+#RUN apk update && \
+#    apk upgrade --update-cache --available && \
+#    apk add --no-cache bash shadow && \
+#    usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 ARG IPE_VERSION
 RUN curl -sSLf -o /usr/local/bin/install-php-extensions \
