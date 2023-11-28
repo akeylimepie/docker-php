@@ -8,6 +8,7 @@ env:
   IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/php
   PHP81_VERSION: 8.1.25
   PHP82_VERSION: 8.2.12
+  PHP83_VERSION: 8.3.0
 
   IPE_VERSION: 2.1.66
   COMPOSER_VERSION: 2.6.5
@@ -26,7 +27,7 @@ jobs:
       - name: Set matrix
         id: set-matrix
         run: |
-          echo "version=[\"${PHP80_VERSION}\",\"${PHP81_VERSION}\",\"${PHP82_VERSION}\"]" >> $GITHUB_OUTPUT
+          echo "version=[\"${PHP81_VERSION}\",\"${PHP82_VERSION}\",\"${PHP83_VERSION}\"]" >> $GITHUB_OUTPUT
           echo "env=[\"prod\",\"dev\"]" >> $GITHUB_OUTPUT
           echo "mode=[\"cli\",\"zts\",\"fpm\"]" >> $GITHUB_OUTPUT
 
