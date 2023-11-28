@@ -24,8 +24,6 @@ RUN install-php-extensions \
         pcntl ffi \
         sockets-stable ev-stable event-stable
 
-RUN apk add --no-cache supervisor
-
 RUN mkdir /etc/periodic/1min \
     && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 

@@ -21,7 +21,6 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 | Xdebug `%%XDEBUG_VERSION%%`     |         | &check; |
 | PHPStan `%%PHPSTAN_VERSION%%`   |         | &check; |
 | Redis `%%REDIS_VERSION%%`       | &check; | &check; |
-| cron, supervisor                | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
 | OPcache, APCu                   | &check; | &check; |
