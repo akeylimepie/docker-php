@@ -6,7 +6,6 @@ on:
 
 env:
   IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/php
-  PHP80_VERSION: 8.0.30
   PHP81_VERSION: 8.1.25
   PHP82_VERSION: 8.2.12
 
