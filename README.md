@@ -1,24 +1,24 @@
 # PHP + Xdebug
 
-![](https://img.shields.io/badge/-8.2.12-informational) ![](https://img.shields.io/badge/-8.1.25-informational) ![](https://img.shields.io/badge/-8.0.30-informational) 
+![](https://img.shields.io/badge/-8.3.0-informational) ![](https://img.shields.io/badge/-8.2.13-informational) ![](https://img.shields.io/badge/-8.1.26-informational) 
 
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-fpm?label=prod)](https://hub.docker.com/r/akeylimepie/php)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.2-fpm-dev?label=dev)](https://hub.docker.com/r/akeylimepie/php)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm?label=prod)](https://hub.docker.com/r/akeylimepie/php)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm-dev?label=dev)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/pulls/akeylimepie/php)](https://hub.docker.com/r/akeylimepie/php)
 [![build](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml/badge.svg?event=push)](https://github.com/akeylimepie/docker-php/actions/workflows/build.yml)
 
 arch: linux/amd64, linux/arm64
 
 ```
-docker pull akeylimepie/php:8.2-fpm
-docker pull akeylimepie/php:8.2-cli
-docker pull akeylimepie/php:8.2-zts
+docker pull akeylimepie/php:8.3-fpm
+docker pull akeylimepie/php:8.3-cli
+docker pull akeylimepie/php:8.3-zts
 ```
 
 | fpm, cli, zts                   | prod    | dev     |
 |---------------------------------|---------|---------|
 | Composer `2.6.5` | &check; | &check; |
-| Xdebug `3.2.2`     |         | &check; |
+| Xdebug `beta`     |         | &check; |
 | PHPStan `1.10.44`   |         | &check; |
 | Redis `6.0.2`       | &check; | &check; |
 | cron, supervisor                | &check; | &check; |
@@ -30,13 +30,13 @@ docker pull akeylimepie/php:8.2-zts
 
 | prod | dev |
 | --- | --- |
+| 8.3-zts | 8.3-zts-dev |
+| 8.3-fpm | 8.3-fpm-dev |
+| 8.3-cli | 8.3-cli-dev |
 | 8.2-zts | 8.2-zts-dev |
 | 8.2-fpm | 8.2-fpm-dev |
 | 8.2-cli | 8.2-cli-dev |
 | 8.1-zts | 8.1-zts-dev |
 | 8.1-fpm | 8.1-fpm-dev |
 | 8.1-cli | 8.1-cli-dev |
-| 8.0-zts | 8.0-zts-dev |
-| 8.0-fpm | 8.0-fpm-dev |
-| 8.0-cli | 8.0-cli-dev |
 
