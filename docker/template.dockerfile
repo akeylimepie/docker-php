@@ -5,7 +5,7 @@ FROM php:${PHP_VERSION}-${PHP_MODE}-alpine as build
 
 RUN apk update && \
     apk upgrade --update-cache --available && \
-    apk add --no-cache bash
+    apk add --no-cache bash supervisor
 
 #RUN apk update && \
 #    apk upgrade --update-cache --available && \
