@@ -18,8 +18,8 @@ docker pull akeylimepie/php:8.3-zts
 | fpm, cli, zts                   | prod    | dev     |
 |---------------------------------|---------|---------|
 | Composer `2.6.6` | &check; | &check; |
-| Xdebug `3.3.0`     |         | &check; |
-| PHPStan `1.10.48`   |         | &check; |
+| Xdebug `3.3.1`     |         | &check; |
+| PHPStan `1.10.50`   |         | &check; |
 | Redis `6.0.2`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
