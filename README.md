@@ -1,6 +1,6 @@
 # PHP + Xdebug
 
-![](https://img.shields.io/badge/-8.3.1-informational) ![](https://img.shields.io/badge/-8.2.14-informational) ![](https://img.shields.io/badge/-8.1.27-informational) 
+![](https://img.shields.io/badge/-8.3.2-informational) ![](https://img.shields.io/badge/-8.2.15-informational) ![](https://img.shields.io/badge/-8.1.27-informational) 
 
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm?label=prod)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm-dev?label=dev)](https://hub.docker.com/r/akeylimepie/php)
@@ -19,7 +19,7 @@ docker pull akeylimepie/php:8.3-zts
 |---------------------------------|---------|---------|
 | Composer `2.6.6` | &check; | &check; |
 | Xdebug `3.3.1`     |         | &check; |
-| PHPStan `1.10.56`   |         | &check; |
+| PHPStan `1.10.57`   |         | &check; |
 | Redis `6.0.2`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
