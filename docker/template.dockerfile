@@ -37,6 +37,8 @@ WORKDIR /srv/app
 #env
 FROM build as dev-env
 
+RUN apk add --no-cache git
+
 ARG XDEBUG_VERSION
 RUN install-php-extensions xdebug-${XDEBUG_VERSION}
 
