@@ -18,10 +18,12 @@ RUN curl -sSLf -o /usr/local/bin/install-php-extensions \
     chmod +x /usr/local/bin/install-php-extensions
 
 ARG COMPOSER_VERSION
+ARG AMQP_VERSION
 ARG REDIS_VERSION
 RUN install-php-extensions \
         @composer-${COMPOSER_VERSION} \
-        igbinary redis-${REDIS_VERSION} \
+        igbinary \
+        amqp-${AMQP_VERSION} redis-${REDIS_VERSION} \
         intl xsl zip-stable opcache apcu \
         pdo-stable pdo_mysql-stable \
         pcntl ffi \

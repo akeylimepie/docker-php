@@ -20,6 +20,7 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 | Composer `%%COMPOSER_VERSION%%` | &check; | &check; |
 | Xdebug `%%XDEBUG_VERSION%%`     |         | &check; |
 | PHPStan `%%PHPSTAN_VERSION%%`   |         | &check; |
+| AMQP `%%AMQP_VERSION%%`         | &check; | &check; |
 | Redis `%%REDIS_VERSION%%`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
