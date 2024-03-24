@@ -108,10 +108,6 @@ jobs:
             "PHP_VERSION=${{ matrix.version }}"
             "PHP_MODE=${{ matrix.mode }}"
             "PHP_ENV=${{ matrix.env }}"
-            "IPE_VERSION=${{ env.IPE_VERSION }}"
-            "COMPOSER_VERSION=${{ env.COMPOSER_VERSION }}"
-            "XDEBUG_VERSION=${{ env.XDEBUG_VERSION }}"
-            "PHPSTAN_VERSION=${{ env.PHPSTAN_VERSION }}"
           target: ${{ matrix.mode }}-mode
           tags: ${{ steps.set-tag.outputs.base }}
           cache-from: type=local,src=/tmp/.buildx-cache
@@ -187,7 +183,7 @@ jobs:
           README="${README//%%COMPOSER_VERSION%%/$COMPOSER_VERSION}"
           README="${README//%%XDEBUG_VERSION%%/$XDEBUG_VERSION}"
           README="${README//%%PHPSTAN_VERSION%%/$PHPSTAN_VERSION}"
-          README="${README//%%AMQP_VERSION%%/$REDIS_VERSION}"
+          README="${README//%%AMQP_VERSION%%/$AMQP_VERSION}"
           README="${README//%%REDIS_VERSION%%/$REDIS_VERSION}"
 
           generate_tags_table "${TAGS[@]}"          
