@@ -20,6 +20,7 @@ docker pull akeylimepie/php:8.3-zts
 | Composer `2.7.2` | &check; | &check; |
 | Xdebug `3.3.1`     |         | &check; |
 | PHPStan `1.10.64`   |         | &check; |
+| AMQP `6.0.2`         | &check; | &check; |
 | Redis `6.0.2`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
