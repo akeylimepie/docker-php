@@ -19,7 +19,7 @@ docker pull akeylimepie/php:8.3-zts
 |---------------------------------|---------|---------|
 | Composer `2.7.2` | &check; | &check; |
 | Xdebug `3.3.1`     |         | &check; |
-| PHPStan `1.10.64`   |         | &check; |
+| PHPStan `1.10.66`   |         | &check; |
 | AMQP `2.1.2`         | &check; | &check; |
 | Redis `6.0.2`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
