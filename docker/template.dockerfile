@@ -19,10 +19,8 @@ RUN install-php-extensions \
         @composer-${COMPOSER_VERSION} \
         igbinary \
         amqp-${AMQP_VERSION} redis-${REDIS_VERSION} \
-        intl xsl zip-stable opcache apcu \
-        pdo-stable pdo_mysql-stable \
-        pcntl ffi \
-        sockets-stable ev-stable event-stable
+        intl xsl zip-stable apcu \
+        pdo-stable pdo_mysql-stable
 
 RUN mkdir /etc/periodic/1min \
     && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
@@ -54,8 +52,11 @@ FROM prod-env as fpm-prod
 
 COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
 
-# mode
+COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
+
 FROM fpm-${PHP_ENV} as fpm-mode
+
+RUN install-php-extensions opcache
 
 COPY config/yy-fpm.conf /usr/local/etc/php-fpm.d/
 COPY config/yy-opcache.ini "$PHP_INI_DIR/conf.d/"
@@ -66,8 +67,14 @@ RUN apk add --no-cache fcgi && \
 
 HEALTHCHECK --interval=10s --timeout=3s --retries=3 --start-period=10s --start-interval=3s CMD ["healthcheck"]
 
-FROM ${PHP_ENV}-env as cli-mode
+FROM ${PHP_ENV}-env as console-mode
+
 RUN apk add --no-cache supervisor
 
-FROM ${PHP_ENV}-env as zts-mode
-RUN apk add --no-cache supervisor
+RUN install-php-extensions \
+        pcntl ffi \
+        sockets-stable ev-stable event-stable
+
+FROM console-mode as cli-mode
+
+FROM console-mode as zts-mode
