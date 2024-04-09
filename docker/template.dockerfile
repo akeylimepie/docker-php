@@ -52,8 +52,6 @@ FROM prod-env as fpm-prod
 
 COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
 
-COPY config/yy-prod.ini "$PHP_INI_DIR/conf.d/"
-
 FROM fpm-${PHP_ENV} as fpm-mode
 
 RUN install-php-extensions opcache
