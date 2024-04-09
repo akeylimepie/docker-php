@@ -73,6 +73,7 @@ jobs:
         with:
           name: tags
           path: tag/*
+          overwrite: true
 
       - name: Checkout
         uses: actions/checkout@v4
