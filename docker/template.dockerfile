@@ -7,11 +7,6 @@ RUN apk update && \
     apk upgrade --update-cache --available && \
     apk add --no-cache bash git supervisor
 
-#RUN apk update && \
-#    apk upgrade --update-cache --available && \
-#    apk add --no-cache bash shadow && \
-#    usermod -u 1000 www-data && groupmod -g 1000 www-data
-
 ARG IPE_VERSION
 RUN curl -sSLf -o /usr/local/bin/install-php-extensions \
             https://github.com/mlocati/docker-php-extension-installer/releases/download/${IPE_VERSION}/install-php-extensions && \
