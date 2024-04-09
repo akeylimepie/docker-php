@@ -27,7 +27,6 @@ RUN mkdir /etc/periodic/1min \
 
 WORKDIR /srv/app
 
-#env
 FROM build as dev-env
 
 RUN apk add --no-cache git
