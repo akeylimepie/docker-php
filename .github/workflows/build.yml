@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "version=[\"${PHP81_VERSION}\",\"${PHP82_VERSION}\",\"${PHP83_VERSION}\"]" >> $GITHUB_OUTPUT
           echo "env=[\"prod\",\"dev\"]" >> $GITHUB_OUTPUT
-          echo "mode=[\"cli\",\"fpm\"]" >> $GITHUB_OUTPUT
+          echo "mode=[\"cli\",\"zts\",\"fpm\"]" >> $GITHUB_OUTPUT
 
   build-image:
     needs: build-matrix

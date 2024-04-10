@@ -18,7 +18,7 @@ ARG REDIS_VERSION
 RUN install-php-extensions \
         @composer-${COMPOSER_VERSION} \
         igbinary \
-        amqp-${AMQP_VERSION} relay \
+        amqp-${AMQP_VERSION} redis-${REDIS_VERSION} \
         intl xsl zip-stable apcu \
         pdo-stable pdo_mysql-stable
 
