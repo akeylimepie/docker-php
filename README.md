@@ -30,13 +30,10 @@ docker pull akeylimepie/php:8.3-zts
 
 | prod | dev |
 | --- | --- |
-| 8.3-zts | 8.3-zts-dev |
 | 8.3-fpm | 8.3-fpm-dev |
 | 8.3-cli | 8.3-cli-dev |
-| 8.2-zts | 8.2-zts-dev |
 | 8.2-fpm | 8.2-fpm-dev |
 | 8.2-cli | 8.2-cli-dev |
-| 8.1-zts | 8.1-zts-dev |
 | 8.1-fpm | 8.1-fpm-dev |
 | 8.1-cli | 8.1-cli-dev |
 
