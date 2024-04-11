@@ -16,6 +16,7 @@ env:
   PHPSTAN_VERSION: 1.10.66
   AMQP_VERSION: 2.1.2
   REDIS_VERSION: 6.0.2
+  RELAY_VERSION: 0.7.0
 
 jobs:
   build-matrix:
