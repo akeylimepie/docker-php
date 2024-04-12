@@ -185,7 +185,7 @@ jobs:
           README="${README//%%XDEBUG_VERSION%%/$XDEBUG_VERSION}"
           README="${README//%%PHPSTAN_VERSION%%/$PHPSTAN_VERSION}"
           README="${README//%%AMQP_VERSION%%/$AMQP_VERSION}"
-          README="${README//%%REDIS_VERSION%%/$REDIS_VERSION}"
+          README="${README//%%RELAY_VERSION%%/$RELAY_VERSION}"
 
           generate_tags_table "${TAGS[@]}"          
           README="${README//%%TAGS_TABLE%%/$TAGS_TABLE}"

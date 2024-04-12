@@ -21,10 +21,11 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 | Xdebug `%%XDEBUG_VERSION%%`     |         | &check; |
 | PHPStan `%%PHPSTAN_VERSION%%`   |         | &check; |
 | AMQP `%%AMQP_VERSION%%`         | &check; | &check; |
-| Redis `%%REDIS_VERSION%%`       | &check; | &check; |
+| Relay `%%RELAY_VERSION%%`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
-| OPcache, APCu                   | &check; | &check; |
+| APCu                            | &check; | &check; |
+| OPcache                         | &check; |         |
 
 ## Supported tags
 
