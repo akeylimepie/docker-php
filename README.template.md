@@ -14,17 +14,16 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-fpm
 docker pull %%IMAGE%%:%%LATEST_VERSION%%-cli
 ```
 
-| fpm, cli, zts                   | prod    | dev     |
-|---------------------------------|---------|---------|
-| Composer `%%COMPOSER_VERSION%%` | &check; | &check; |
-| Xdebug `%%XDEBUG_VERSION%%`     |         | &check; |
-| PHPStan `%%PHPSTAN_VERSION%%`   |         | &check; |
-| AMQP `%%AMQP_VERSION%%`         | &check; | &check; |
-| Relay `%%RELAY_VERSION%%`       | &check; | &check; |
-| PDO, PDO MySQL                  | &check; | &check; |
-| zip, pcntl, event, ev, ffi      | &check; | &check; |
-| APCu                            | &check; | &check; |
-| OPcache                         | &check; |         |
+| fpm, cli, zts                    | prod    | dev     |
+|----------------------------------|---------|---------|
+| Composer `%%COMPOSER_VERSION%%`  | &check; | &check; |
+| Xdebug `%%XDEBUG_VERSION%%`      |         | &check; |
+| PHPStan `%%PHPSTAN_VERSION%%`    |         | &check; |
+| AMQP `%%AMQP_VERSION%%`          | &check; | &check; |
+| Relay `%%RELAY_VERSION%%`        | &check; | &check; |
+| PDO, PDO MySQL                   | &check; | &check; |
+| intl, zip, pcntl, event, ev, ffi | &check; | &check; |
+| APCu, OPcache                    | &check; | &check; |
 
 ## Supported tags
 
