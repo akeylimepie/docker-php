@@ -14,7 +14,6 @@ RUN curl -sSLf -o /usr/local/bin/install-php-extensions \
 
 ARG COMPOSER_VERSION
 ARG AMQP_VERSION
-ARG REDIS_VERSION
 ARG RELAY_VERSION
 RUN install-php-extensions \
         @composer-${COMPOSER_VERSION} \
@@ -22,9 +21,6 @@ RUN install-php-extensions \
         amqp-${AMQP_VERSION} relay-${RELAY_VERSION} \
         intl xsl zip-stable apcu \
         pdo-stable pdo_mysql-stable
-
-RUN mkdir /etc/periodic/1min \
-    && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 
 WORKDIR /srv/app
 
