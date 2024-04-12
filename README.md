@@ -12,7 +12,6 @@ arch: linux/amd64, linux/arm64
 ```
 docker pull akeylimepie/php:8.3-fpm
 docker pull akeylimepie/php:8.3-cli
-docker pull akeylimepie/php:8.3-zts
 ```
 
 | fpm, cli, zts                   | prod    | dev     |
@@ -21,10 +20,11 @@ docker pull akeylimepie/php:8.3-zts
 | Xdebug `3.3.1`     |         | &check; |
 | PHPStan `1.10.66`   |         | &check; |
 | AMQP `2.1.2`         | &check; | &check; |
-| Redis `6.0.2`       | &check; | &check; |
+| Relay `0.7.0`       | &check; | &check; |
 | PDO, PDO MySQL                  | &check; | &check; |
 | zip, pcntl, event, ev, ffi      | &check; | &check; |
-| OPcache, APCu                   | &check; | &check; |
+| APCu                            | &check; | &check; |
+| OPcache                         | &check; |         |
 
 ## Supported tags
 
