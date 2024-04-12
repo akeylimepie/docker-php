@@ -108,6 +108,12 @@ jobs:
             "PHP_VERSION=${{ matrix.version }}"
             "PHP_MODE=${{ matrix.mode }}"
             "PHP_ENV=${{ matrix.env }}"
+            "IPE_VERSION=${{ env.IPE_VERSION }}"
+            "COMPOSER_VERSION=${{ env.COMPOSER_VERSION }}"
+            "XDEBUG_VERSION=${{ env.XDEBUG_VERSION }}"
+            "PHPSTAN_VERSION=${{ env.PHPSTAN_VERSION }}"
+            "AMQP_VERSION=${{ env.AMQP_VERSION }}"
+            "RELAY_VERSION=${{ env.RELAY_VERSION }}"
           target: ${{ matrix.mode }}-mode
           tags: ${{ steps.set-tag.outputs.base }}
           cache-from: type=local,src=/tmp/.buildx-cache
