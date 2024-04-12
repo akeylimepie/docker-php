@@ -12,7 +12,6 @@ arch: linux/amd64, linux/arm64
 ```
 docker pull %%IMAGE%%:%%LATEST_VERSION%%-fpm
 docker pull %%IMAGE%%:%%LATEST_VERSION%%-cli
-docker pull %%IMAGE%%:%%LATEST_VERSION%%-zts
 ```
 
 | fpm, cli, zts                   | prod    | dev     |
