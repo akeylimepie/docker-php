@@ -16,7 +16,7 @@ docker pull akeylimepie/php:8.3-cli
 
 | fpm, cli, zts                    | prod    | dev     |
 |----------------------------------|---------|---------|
-| Composer `2.7.2`  | &check; | &check; |
+| Composer `2.7.4`  | &check; | &check; |
 | Xdebug `3.3.2`      |         | &check; |
 | PHPStan `1.10.67`    |         | &check; |
 | AMQP `2.1.2`          | &check; | &check; |
