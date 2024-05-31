@@ -72,7 +72,7 @@ jobs:
       - name: Save tag
         uses: actions/upload-artifact@v4
         with:
-          name: tag-${{ matrix.version }}-${{ matrix.mode }}-${{ matrix.env }}
+          name: tag-${{ matrix.version }}-${{ matrix.variant }}-${{ matrix.env }}
           path: tag/*
 
       - name: Checkout
@@ -116,7 +116,7 @@ jobs:
             "APCU_VERSION=${{ env.APCU_VERSION }}"
             "AMQP_VERSION=${{ env.AMQP_VERSION }}"
             "RELAY_VERSION=${{ env.RELAY_VERSION }}"
-          target: ${{ matrix.mode }}-mode
+          target: ${{ matrix.variant }}
           tags: ${{ steps.set-tag.outputs.base }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
