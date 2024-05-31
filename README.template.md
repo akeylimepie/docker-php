@@ -14,16 +14,18 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-fpm
 docker pull %%IMAGE%%:%%LATEST_VERSION%%-cli
 ```
 
-| fpm, cli, zts                    | prod    | dev     |
-|----------------------------------|---------|---------|
-| Composer `%%COMPOSER_VERSION%%`  | &check; | &check; |
-| Xdebug `%%XDEBUG_VERSION%%`      |         | &check; |
-| PHPStan `%%PHPSTAN_VERSION%%`    |         | &check; |
-| AMQP `%%AMQP_VERSION%%`          | &check; | &check; |
-| Relay `%%RELAY_VERSION%%`        | &check; | &check; |
-| PDO, PDO MySQL                   | &check; | &check; |
-| intl, zip, pcntl, event, ev, ffi | &check; | &check; |
-| APCu, OPcache                    | &check; | &check; |
+|                                   | fpm-dev | fpm-prod | cli-dev | cli-prod |
+|-----------------------------------|---------|----------|---------|----------|
+| Composer `%%COMPOSER_VERSION%%`   | &check; | &check;  | &check; | &check;  |
+| Xdebug `%%XDEBUG_VERSION%%`       | &check; |          | &check; |          |
+| PHPStan `%%PHPSTAN_VERSION%%`     | &check; |          | &check; |          |
+| APCu `%%APCU_VERSION%%`           | &check; | &check;  | &check; | &check;  |
+| AMQP `%%AMQP_VERSION%%`           | &check; | &check;  | &check; | &check;  |
+| Relay `%%RELAY_VERSION%%`         | &check; | &check;  | &check; | &check;  |
+| PDO, PDO MySQL                    | &check; | &check;  | &check; | &check;  |
+| intl xsl zip igbinary msgpack ffi | &check; | &check;  | &check; | &check;  |
+| pcntl, event, sockets             |         |          | &check; | &check;  |
+| OPcache                           | &check; | &check;  |         |          |
 
 ## Supported tags
 
