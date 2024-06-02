@@ -19,6 +19,8 @@ RUN install-php-extensions \
     apcu-${APCU_VERSION} amqp-${AMQP_VERSION} relay-${RELAY_VERSION} \
     pdo_mysql-stable
 
+WORKDIR /srv/app
+
 
 
 FROM base as base-dev
