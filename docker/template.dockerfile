@@ -17,7 +17,7 @@ RUN install-php-extensions \
     @composer-${COMPOSER_VERSION} \
     intl xsl zip igbinary msgpack ffi \
     apcu-${APCU_VERSION} amqp-${AMQP_VERSION} relay-${RELAY_VERSION} \
-    pdo_mysql-stable
+    pdo_mysql
 
 WORKDIR /srv/app
 
@@ -49,6 +49,7 @@ COPY --link config/xx-opcache-dev.ini "$PHP_INI_DIR/conf.d/"
 FROM base-prod as fpm-prod
 COPY --link config/xx-fpm.prod.ini "$PHP_INI_DIR/conf.d/"
 COPY --link config/xx-opcache-prod.ini "$PHP_INI_DIR/conf.d/"
+
 
 
 FROM fpm-${PHP_ENV} as fpm
