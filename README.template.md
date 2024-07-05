@@ -22,6 +22,7 @@ docker pull %%IMAGE%%:%%LATEST_VERSION%%-cli
 | APCu `%%APCU_VERSION%%`           | &check; | &check;  | &check; | &check;  |
 | AMQP `%%AMQP_VERSION%%`           | &check; | &check;  | &check; | &check;  |
 | Relay `%%RELAY_VERSION%%`         | &check; | &check;  | &check; | &check;  |
+| Memcached `%%MEMCACHED_VERSION%%` | &check; | &check;  | &check; | &check;  |
 | PDO, PDO MySQL                    | &check; | &check;  | &check; | &check;  |
 | intl xsl zip igbinary msgpack ffi | &check; | &check;  | &check; | &check;  |
 | pcntl, event, sockets             |         |          | &check; | &check;  |

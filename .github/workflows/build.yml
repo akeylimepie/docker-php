@@ -17,6 +17,7 @@ env:
   APCU_VERSION: 5.1.23
   AMQP_VERSION: 2.1.2
   RELAY_VERSION: 0.8.0
+  MEMCACHED_VERSION: 3.2.0
 
 jobs:
   build-matrix:
@@ -116,6 +117,7 @@ jobs:
             "APCU_VERSION=${{ env.APCU_VERSION }}"
             "AMQP_VERSION=${{ env.AMQP_VERSION }}"
             "RELAY_VERSION=${{ env.RELAY_VERSION }}"
+            "MEMCACHED_VERSION=${{ env.MEMCACHED_VERSION }}"
           target: ${{ matrix.variant }}
           tags: ${{ steps.set-tag.outputs.base }}
           cache-from: type=local,src=/tmp/.buildx-cache
@@ -195,6 +197,7 @@ jobs:
           README="${README//%%APCU_VERSION%%/$APCU_VERSION}"
           README="${README//%%AMQP_VERSION%%/$AMQP_VERSION}"
           README="${README//%%RELAY_VERSION%%/$RELAY_VERSION}"
+          README="${README//%%MEMCACHED_VERSION%%/$MEMCACHED_VERSION}"
 
           generate_tags_table "${TAGS[@]}"          
           README="${README//%%TAGS_TABLE%%/$TAGS_TABLE}"

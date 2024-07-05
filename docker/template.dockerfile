@@ -12,11 +12,12 @@ ARG COMPOSER_VERSION
 ARG APCU_VERSION
 ARG AMQP_VERSION
 ARG RELAY_VERSION
+ARG MEMCACHED_VERSION
 
 RUN install-php-extensions \
     @composer-${COMPOSER_VERSION} \
     intl xsl zip igbinary msgpack ffi \
-    apcu-${APCU_VERSION} amqp-${AMQP_VERSION} relay-${RELAY_VERSION} \
+    apcu-${APCU_VERSION} amqp-${AMQP_VERSION} relay-${RELAY_VERSION} memcached-${MEMCACHED_VERSION} \
     pdo_mysql
 
 WORKDIR /srv/app
