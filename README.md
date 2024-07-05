@@ -14,19 +14,19 @@ docker pull akeylimepie/php:8.3-fpm
 docker pull akeylimepie/php:8.3-cli
 ```
 
-|                                   | fpm-dev | fpm-prod | cli-dev | cli-prod |
-|-----------------------------------|---------|----------|---------|----------|
-| Composer `2.7.7`   | &check; | &check;  | &check; | &check;  |
-| Xdebug `3.3.2`       | &check; |          | &check; |          |
-| PHPStan `1.11.6`     | &check; |          | &check; |          |
-| APCu `5.1.23`           | &check; | &check;  | &check; | &check;  |
-| AMQP `2.1.2`           | &check; | &check;  | &check; | &check;  |
-| Relay `0.8.0`         | &check; | &check;  | &check; | &check;  |
-| Memcached `3.2.0` | &check; | &check;  | &check; | &check;  |
-| PDO, PDO MySQL                    | &check; | &check;  | &check; | &check;  |
-| intl xsl zip igbinary msgpack ffi | &check; | &check;  | &check; | &check;  |
-| pcntl, event, sockets             |         |          | &check; | &check;  |
-| OPcache                           | &check; | &check;  |         |          |
+|                                                 | fpm-dev | fpm-prod | cli-dev | cli-prod |
+|-------------------------------------------------|---------|----------|---------|----------|
+| Composer `2.7.7`                 | &check; | &check;  | &check; | &check;  |
+| Xdebug `3.3.2`                     | &check; |          | &check; |          |
+| PHPStan `1.11.6`                   | &check; |          | &check; |          |
+| APCu `5.1.23`                         | &check; | &check;  | &check; | &check;  |
+| AMQP `2.1.2`                         | &check; | &check;  | &check; | &check;  |
+| Relay `0.8.0`                       | &check; | &check;  | &check; | &check;  |
+| Memcached `3.2.0`               | &check; | &check;  | &check; | &check;  |
+| PDO, PDO MySQL                                  | &check; | &check;  | &check; | &check;  |
+| intl, xsl, zip, igbinary, msgpack, ffi, sysvsem | &check; | &check;  | &check; | &check;  |
+| pcntl, event, sockets                           |         |          | &check; | &check;  |
+| OPcache                                         | &check; | &check;  |         |          |
 
 ## Supported tags
 
