@@ -16,7 +16,7 @@ ARG MEMCACHED_VERSION
 
 RUN install-php-extensions \
     @composer-${COMPOSER_VERSION} \
-    intl xsl zip igbinary msgpack ffi \
+    intl xsl zip igbinary msgpack ffi sysvsem \
     apcu-${APCU_VERSION} amqp-${AMQP_VERSION} relay-${RELAY_VERSION} memcached-${MEMCACHED_VERSION} \
     pdo_mysql
 
