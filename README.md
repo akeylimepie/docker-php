@@ -1,6 +1,6 @@
 # PHP + Xdebug
 
-![](https://img.shields.io/badge/-8.3.11-informational) ![](https://img.shields.io/badge/-8.2.23-informational) ![](https://img.shields.io/badge/-8.1.29-informational) 
+![](https://img.shields.io/badge/-8.3.12-informational) ![](https://img.shields.io/badge/-8.2.24-informational) ![](https://img.shields.io/badge/-8.1.30-informational) 
 
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm?label=prod)](https://hub.docker.com/r/akeylimepie/php)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/akeylimepie/php/8.3-fpm-dev?label=dev)](https://hub.docker.com/r/akeylimepie/php)
@@ -16,10 +16,10 @@ docker pull akeylimepie/php:8.3-cli
 
 |                                                 | fpm-dev | fpm-prod | cli-dev | cli-prod |
 |-------------------------------------------------|---------|----------|---------|----------|
-| Composer `2.7.9`                 | &check; | &check;  | &check; | &check;  |
+| Composer `2.8.1`                 | &check; | &check;  | &check; | &check;  |
 | Xdebug `3.3.2`                     | &check; |          | &check; |          |
-| PHPStan `1.12.3`                   | &check; |          | &check; |          |
-| APCu `5.1.23`                         | &check; | &check;  | &check; | &check;  |
+| PHPStan `1.12.6`                   | &check; |          | &check; |          |
+| APCu `5.1.24`                         | &check; | &check;  | &check; | &check;  |
 | AMQP `2.1.2`                         | &check; | &check;  | &check; | &check;  |
 | Relay `0.8.1`                       | &check; | &check;  | &check; | &check;  |
 | Memcached `3.2.0`               | &check; | &check;  | &check; | &check;  |
