@@ -18,11 +18,11 @@ docker pull akeylimepie/php:8.3-cli
 |-------------------------------------------------|---------|----------|---------|----------|
 | Composer `2.8.1`                 | &check; | &check;  | &check; | &check;  |
 | Xdebug `3.3.2`                     | &check; |          | &check; |          |
-| PHPStan `1.12.6`                   | &check; |          | &check; |          |
+| PHPStan `1.12.7`                   | &check; |          | &check; |          |
 | APCu `5.1.24`                         | &check; | &check;  | &check; | &check;  |
 | AMQP `2.1.2`                         | &check; | &check;  | &check; | &check;  |
 | Relay `0.8.1`                       | &check; | &check;  | &check; | &check;  |
-| Memcached `3.2.0`               | &check; | &check;  | &check; | &check;  |
+| Memcached `3.3.0`               | &check; | &check;  | &check; | &check;  |
 | PDO, PDO MySQL                                  | &check; | &check;  | &check; | &check;  |
 | intl, xsl, zip, igbinary, msgpack, ffi, sysvsem | &check; | &check;  | &check; | &check;  |
 | pcntl, event, sockets                           |         |          | &check; | &check;  |
