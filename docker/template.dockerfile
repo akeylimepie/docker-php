@@ -1,7 +1,7 @@
 ARG PHP_VERSION
 ARG PHP_VARIANT
 ARG PHP_ENV
-FROM php:${PHP_VERSION}-${PHP_VARIANT}-alpine3.20 as base
+FROM php:${PHP_VERSION}-${PHP_VARIANT}-alpine3.20 AS base
 
 ARG IPE_VERSION
 ADD --chmod=0755 \
@@ -24,7 +24,7 @@ WORKDIR /srv/app
 
 
 
-FROM base as base-dev
+FROM base AS base-dev
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY --link config/xx-xdebug.ini "$PHP_INI_DIR/conf.d/"
@@ -38,22 +38,22 @@ ENV PATH "$PATH:/opt/vendor/bin"
 
 
 
-FROM base as base-prod
+FROM base AS base-prod
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 
 
-FROM base-dev as fpm-dev
+FROM base-dev AS fpm-dev
 COPY --link config/xx-opcache-dev.ini "$PHP_INI_DIR/conf.d/"
 
-FROM base-prod as fpm-prod
+FROM base-prod AS fpm-prod
 COPY --link config/xx-fpm.prod.ini "$PHP_INI_DIR/conf.d/"
 COPY --link config/xx-opcache-prod.ini "$PHP_INI_DIR/conf.d/"
 
 
 
-FROM fpm-${PHP_ENV} as fpm
+FROM fpm-${PHP_ENV} AS fpm
 
 RUN install-php-extensions opcache
 
@@ -68,7 +68,7 @@ HEALTHCHECK --interval=10s --timeout=3s --retries=3 --start-period=10s --start-i
 
 
 
-FROM base-${PHP_ENV} as cli
+FROM base-${PHP_ENV} AS cli
 
 RUN apk add --no-cache supervisor
 
