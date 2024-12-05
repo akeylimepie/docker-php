@@ -9,11 +9,12 @@ env:
   PHP81_VERSION: 8.1.31
   PHP82_VERSION: 8.2.26
   PHP83_VERSION: 8.3.14
+  PHP84_VERSION: 8.4.1
 
-  IPE_VERSION: 2.6.4
+  IPE_VERSION: 2.7.5
   COMPOSER_VERSION: 2.8.3
-  XDEBUG_VERSION: 3.3.2
-  PHPSTAN_VERSION: 2.0.2
+  XDEBUG_VERSION: 3.4.0
+  PHPSTAN_VERSION: 2.0.3
   APCU_VERSION: 5.1.24
   AMQP_VERSION: 2.1.2
   RELAY_VERSION: 0.9.0
@@ -30,7 +31,7 @@ jobs:
       - name: Set matrix
         id: set-matrix
         run: |
-          echo "version=[\"${PHP81_VERSION}\",\"${PHP82_VERSION}\",\"${PHP83_VERSION}\"]" >> $GITHUB_OUTPUT
+          echo "version=[\"${PHP81_VERSION}\",\"${PHP82_VERSION}\",\"${PHP83_VERSION}\",\"${PHP84_VERSION}\"]" >> $GITHUB_OUTPUT
           echo "variant=[\"cli\",\"fpm\"]" >> $GITHUB_OUTPUT
           echo "env=[\"prod\",\"dev\"]" >> $GITHUB_OUTPUT
 
