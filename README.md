@@ -21,7 +21,7 @@ docker pull akeylimepie/php:8.4-cli
 | PHPStan `2.1.2`                   | &check; |          | &check; |          |
 | APCu `5.1.24`                         | &check; | &check;  | &check; | &check;  |
 | AMQP `2.1.2`                         | &check; | &check;  | &check; | &check;  |
-| Relay `0.9.1`                       | &check; | &check;  | &check; | &check;  |
+| Relay `0.10.0`                       | &check; | &check;  | &check; | &check;  |
 | Memcached `3.3.0`               | &check; | &check;  | &check; | &check;  |
 | PDO, PDO MySQL                                  | &check; | &check;  | &check; | &check;  |
 | intl, xsl, zip, igbinary, msgpack, ffi, sysvsem | &check; | &check;  | &check; | &check;  |
