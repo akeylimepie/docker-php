@@ -18,7 +18,7 @@ docker pull akeylimepie/php:8.4-cli
 |-------------------------------------------------|---------|----------|---------|----------|
 | Composer `2.8.5`                 | &check; | &check;  | &check; | &check;  |
 | Xdebug `3.4.1`                     | &check; |          | &check; |          |
-| PHPStan `2.1.2`                   | &check; |          | &check; |          |
+| PHPStan `2.1.4`                   | &check; |          | &check; |          |
 | APCu `5.1.24`                         | &check; | &check;  | &check; | &check;  |
 | AMQP `2.1.2`                         | &check; | &check;  | &check; | &check;  |
 | Relay `0.10.0`                       | &check; | &check;  | &check; | &check;  |
