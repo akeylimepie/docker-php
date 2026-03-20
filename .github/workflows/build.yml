@@ -6,18 +6,19 @@ on:
 
 env:
   IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/php
-  PHP82_VERSION: 8.2.29
-  PHP83_VERSION: 8.3.25
-  PHP84_VERSION: 8.4.12
+  PHP82_VERSION: 8.2.30
+  PHP83_VERSION: 8.3.30
+  PHP84_VERSION: 8.4.19
+  PHP85_VERSION: 8.5.4
 
-  IPE_VERSION: 2.9.7
-  COMPOSER_VERSION: 2.8.11
-  XDEBUG_VERSION: 3.4.5
-  PHPSTAN_VERSION: 2.1.25
-  APCU_VERSION: 5.1.27
-  AMQP_VERSION: 2.1.2
-  RELAY_VERSION: 0.11.1
-  MEMCACHED_VERSION: 3.3.0
+  IPE_VERSION: 2.10.7
+  COMPOSER_VERSION: 2.9.5
+  XDEBUG_VERSION: 3.5.1
+  PHPSTAN_VERSION: 2.1.42
+  APCU_VERSION: 5.1.28
+  AMQP_VERSION: 2.2.0
+  RELAY_VERSION: 0.20.0
+  MEMCACHED_VERSION: 3.4.0
 
 jobs:
   build-matrix:
@@ -30,7 +31,7 @@ jobs:
       - name: Set matrix
         id: set-matrix
         run: |
-          echo "version=[\"${PHP82_VERSION}\",\"${PHP83_VERSION}\",\"${PHP84_VERSION}\"]" >> $GITHUB_OUTPUT
+          echo "version=[\"${PHP82_VERSION}\",\"${PHP83_VERSION}\",\"${PHP84_VERSION}\",\"${PHP85_VERSION}\"]" >> $GITHUB_OUTPUT
           echo "variant=[\"cli\",\"fpm\"]" >> $GITHUB_OUTPUT
           echo "env=[\"prod\",\"dev\"]" >> $GITHUB_OUTPUT
 
